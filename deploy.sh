@@ -4,6 +4,3 @@ pip install -r requirements.txt
 
 pip install joblib scikit-learn
 
-cd app
-
-
