@@ -5,10 +5,10 @@ services:
     image: postgres:17
     container_name: fraud_db
     environment:
-      POSTGRES_USER: mac
+      POSTGRES_USER: linux
       POSTGRES_DB: frauddb
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - "5433:5432"
     volumes:
-      - ./app/Database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      -postgres_data:/var/lib/postgresql/data
