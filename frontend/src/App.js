@@ -22,17 +22,17 @@ function App() {
       <aside className="sidebar">
         <div className="sidebar-brand">
           <Shield className="brand-icon" />
-          <span className="brand-text">Aegis Fraud Ops</span>
+          <span className="brand-text">AI Fraud Detection</span>
         </div>
         <nav className="sidebar-nav">
-          <div 
+          <div
             className={`nav-item ${activeTab === 'dashboard' ? 'active' : ''}`}
             onClick={() => setActiveTab('dashboard')}
           >
             <Activity size={18} />
             <span>Dashboard</span>
           </div>
-          <div 
+          <div
             className={`nav-item ${activeTab === 'score' ? 'active' : ''}`}
             onClick={() => setActiveTab('score')}
           >
