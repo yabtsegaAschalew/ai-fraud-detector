@@ -8,7 +8,7 @@ const GROUPS = [
     id: "account",
     title: "Account & Demographics",
     icon: <Key size={18} />,
-    fields: ["account_id", "CustomerAge", "AccountBalance", "CustomerOccupation"]
+    fields: ["account_id", "Customer Age", "Account Balance", "Customer Occupation"]
   },
   {
     id: "context",
@@ -20,13 +20,13 @@ const GROUPS = [
     id: "behavior",
     title: "Behavioral Signals",
     icon: <Activity size={18} />,
-    fields: ["LoginAttempts", "user_transaction_count", "user_avg_transaction_amount", "deviation_from_user_avg", "TransactionDuration"]
+    fields: ["Login Attempts", "user_transaction_count", "user_avg_transaction_amount", "deviation_from_user_avg", "Transaction Duration"]
   },
   {
     id: "transaction",
     title: "Transaction Specifics",
     icon: <TrendingUp size={18} />,
-    fields: ["TransactionAmount", "TransactionType", "transaction_hour", "transaction_day_of_week"]
+    fields: ["Transaction Amount", "Transaction Type", "transaction_hour", "transaction_day_of_week"]
   }
 ];
 
@@ -137,6 +137,23 @@ export default function TransactionScore() {
             <option value="Mobile">Mobile</option>
             <option value="ATM">ATM</option>
             <option value="In-Branch">In-Branch</option>
+          </select>
+        </div>
+      );
+    }
+
+    if (key === "transaction_day_of_week") {
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      return (
+        <div className="form-group" key={key}>
+          <label className="form-label">
+            Transaction Day Of Week
+            <span className="input-hint">0-6 (Sun-Sat)</span>
+          </label>
+          <select className="form-select" name={key} value={val} onChange={handleChange}>
+            {days.map((day, idx) => (
+              <option key={idx} value={idx}>{idx} - {day}</option>
+            ))}
           </select>
         </div>
       );
